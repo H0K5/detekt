@@ -27,26 +27,26 @@
                 </div>
                 <div class="panel-body">
                     C'est un outil facile d'utilisation qui tente d'indentifier toute potentielle infection par un logiciel espion sur votre ordinateur.
-                    Une fois lancé, il va essayer de chercher certains indicateurs dans la mémoire. Si vous avez des applications en cours (comme Skype, un navigateur, etc.) veuillez les fermer afin d'augmenter les performances et de réduire les chances de faux-positifs. L'exécution peut prendre plusieurs minutes, restez patient.
+                    Une fois lancé, il va essayer de chercher certains indicateurs dans la mémoire. Si vous avez des applications en cours d'exécution (telles que Skype, un navigateur, etc.) veuillez les fermer afin d'augmenter les performances et de réduire les chances de faux-positifs. L'exécution peut prendre plusieurs minutes, restez patient.
                 </div>
             </div>
 
             <p>
-                <a class="btn btn-lg btn-primary btn-block" href="/scan">Analyser !</a>
+                <a class="btn btn-lg btn-primary btn-block" href="/scan">Lancer l'analyse !</a>
             </p>
         % end
 
         % if action == 'running':
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><strong>En cours...</strong></h3>
+                    <h3 class="panel-title"><strong>Analyse en cours...</strong></h3>
                 </div>
                 <div class="panel-body">
-                    <p>L'analyse est en cours. Ceci peut prendre plusieurs minutes, veuillez rester patient et ne pas interrompre l'application avant que l'analyse ne se termine.
+                    <p>L'analyse est en cours. Ceci peut prendre plusieurs minutes, veuillez patienter et ne pas interrompre l'application avant que l'analyse ne se termine.
                     <div class="progress progress-striped active">
                         <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
                     </div>
-                    <p style="text-align: center;"><a href="/check">Rafraîchir</a><br /><small>Le rafraîchissement devrait être automatique et toutes les 5 secondes</small></p>
+                    <p style="text-align: center;"><a href="/check">Rafraîchir</a><br /><small>Un rafraîchissement automatique devrait se produire toutes les 5 secondes</small></p>
                 </div>
             </div>
         % end
@@ -91,7 +91,7 @@
                                 C'est un cheval de troie assez commun, disponible gratuitement en ligne et accessible à n'importe qui. Il aurait normalement du être détecté et mis en quarantaine par votre logiciel antivirus. Bien qu'il soit impossible de deviner qui peut vous cibler, vous devriez cependant demander de l'aide.
 
                             % elif detection == 'FinFisher FinSpy':
-                                C'est un virus de type "backdoor", extrêmement sophistiqué, qui est produit par une entreprise allemande et vendu aux agences gouvernementales à travers le monde. Vous êtes peut-être ciblé par votre gouvernement ou un gouvernement étranger. Vous devriez être très prudent durant les prochaines étapes, afin de ne pas aggraver la situation.
+                                C'est un virus de type "backdoor" (porte dérobée), extrêmement sophistiqué, qui est produit par une entreprise allemande et vendu aux agences gouvernementales à travers le monde. Vous êtes peut-être ciblé par votre gouvernement ou un gouvernement étranger. Vous devriez être très prudent durant les prochaines étapes, afin de ne pas aggraver la situation.
 
                             % elif detection == 'Gh0st':
                                 C'est un cheval de troie assez commun, disponible gratuitement en ligne et accessible à n'importe qui. Il aurait normalement du être détecté et mis en quarantaine par votre logiciel antivirus. Bien qu'il soit impossible de deviner qui peut vous cibler, vous devriez cependant demander de l'aide.
@@ -100,7 +100,7 @@
                                 C'est un cheval de troie assez commun, disponible gratuitement en ligne et accessible à n'importe qui. Il aurait normalement du être détecté et mis en quarantaine par votre logiciel antivirus. Bien qu'il soit impossible de deviner qui peut vous cibler, vous devriez cependant demander de l'aide.
 
                             % elif detection == 'Hacking Team RCS Scout' or detection == 'Hacking Team RCS Backdoor':
-                                C'est un virus de type "backdoor", extrêmement sophistiqué, qui est produit par une entreprise allemande et vendu aux agences gouvernementales à travers le monde. Vous êtes peut-être ciblé par votre gouvernement ou un gouvernement étranger. Vous devriez être très prudent durant les prochaines étapes, afin de ne pas aggraver la situation.
+                                C'est un virus de type "backdoor" (porte dérobée), extrêmement sophistiqué, qui est produit par une entreprise allemande et vendu aux agences gouvernementales à travers le monde. Vous êtes peut-être ciblé par votre gouvernement ou un gouvernement étranger. Vous devriez être très prudent durant les prochaines étapes, afin de ne pas aggraver la situation.
 
                             % elif detection == 'ShadowTech RAT':
                                 C'est un cheval de troie assez commun, disponible gratuitement en ligne et accessible à n'importe qui. Il aurait normalement du être détecté et mis en quarantaine par votre logiciel antivirus. Bien qu'il soit impossible de deviner qui peut vous cibler, vous devriez cependant demander de l'aide.
