@@ -61,3 +61,43 @@ rule RCS_Backdoor
     condition:
         (2 of ($debug*) or 2 of ($log*) or all of ($error*)) and not any of ($filter*)
 }
+
+rule RCS_Backdoor_New
+{
+    meta:
+        detection = "Hacking Team RCS Backdoor"
+
+    strings:
+        $filter1 = "$phone1"
+        $filter2 = "$mod1"
+        $filter3 = "$conv1"
+        $filter4 = "$system1"
+
+        $wallet1  = /(%)APPDATA%\\Feathercoin\\wallet\.dat/ wide ascii
+        $wallet1  = /(%)APPDATA%\\Namecoin\\wallet\.dat/ wide ascii
+        $wallet1  = /(%)APPDATA%\\Litecoin\\wallet\.dat/ wide ascii
+        $wallet1  = /(%)APPDATA%\\Bitcoin\\wallet\.dat/ wide ascii
+
+        $mod1 = /\[Crisis\]\: Network activity restarted/ wide ascii
+        $mod2 = /\[Crisis\]\: Network activity inhibited/ wide ascii
+        $mod3 = /\[Core Module\]\: Started/ wide ascii
+        $mod4 = /\[Inf. Module\]\: Spread to VMWare/ wide ascii
+        $mod5 = /\[Inf. Module\]\: Spread to USB Drive/ wide ascii
+
+        $conv1 = /(E)nd of conversation - Start of conversation/ wide ascii
+        $conv2 = /(F)ine conversazione - Inizio conversazione/ wide ascii
+
+        $system1 = /(P)rocessor\: %d x %s/ wide ascii
+        $system2 = /(M)emory\: / wide ascii
+        $system3 = /(D)isk\: / wide ascii
+        $system4 = /(B)attery\: %s%d%%/ wide ascii
+        $system5 = /(O)S Version\: %s%s%s%s%s/ wide ascii
+        $system6 = /(R)egistered to\: %s%s%s%s \{%s\}/ wide ascii
+        $system7 = /(L)ocale settings\: %s_%s (UTC %\+\.2d\:%\.2d)/ wide ascii
+        $system8 = /(T)ime delta\: %s/ wide ascii
+        $system9 = /(U)ser\: %s%s%s%s%s/ wide ascii
+
+    condition:
+        (any of ($wallet*) and 3 of ($mod*) and all of ($conv*) and 5 of ($system*))
+        and not any of ($filter*)
+}
