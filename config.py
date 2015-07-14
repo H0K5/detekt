@@ -85,13 +85,8 @@ class Config(object):
         elif windows_release == '8':
             windows_major, windows_minor = get_os_version()
 
-            # From Windows 8.1, Microsoft changed the way the underlying version
-            # functions work. Python is currently not able to identify Windows 8.1
-            # correctly, so we need to invoke Windows native RtlGetVersion function.
-            # If it's 6.3.x, it's Windows 8.1.
             if windows_major == 6 and windows_minor == 3:
-                if self.architecture == 'x86':
-                    self.profile = 'Win8SP1{0}'.format(self.architecture)
+                self.profile = 'Win8SP1{0}'.format(self.architecture)
             else:
                 self.profile = 'Win8SP0{0}'.format(self.architecture)
         elif windows_release == '8.1':
