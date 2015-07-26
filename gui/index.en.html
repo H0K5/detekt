@@ -15,7 +15,7 @@
         </div>
 
         % if action == 'start':
-            % include('languages.html', language=language)
+            {# % include('languages.html', language=language) #}
 
             % if connection:
                 <div class="alert alert-warning"><strong>WARNING!</strong> You appear to be connected to the Internet. You should disconnect from any cable or wireless network during this test.</div>
@@ -59,7 +59,7 @@
                     <ul>
                         % for error in errors:
                             % if error == 'NOT_AN_ADMIN':
-                                <li>You need to run the application as an Administrator!</li>
+                                <li>You need to run the application as an Administrator!<br /><p><center><img src="static/runas.png" alt="" /></center></p></li>
                             % elif error == 'UNSUPPORTED_WINDOWS':
                                 <li>You are running an unsupported version of Microsoft Windows.</li>
                             % elif error == 'NO_DRIVER':
