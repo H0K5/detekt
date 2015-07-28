@@ -86,7 +86,7 @@
                     <ul>
                         % for detection in results:
                             <li><strong>{{detection}}</strong><br />
-                            % elif detection == 'FinFisher FinSpy':
+                            % if detection == 'FinFisher FinSpy':
                                 This is a very sophisticated backdoor produced by a German company and sold to government agencies worldwide. You might be targeted by yours or a foreign government. You should be really careful in your next steps in order to not further jeopardize your situation.
 
                             % elif detection == 'Hacking Team RCS Scout' or detection == 'Hacking Team RCS Backdoor':
