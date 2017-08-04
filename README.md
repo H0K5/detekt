@@ -1,3 +1,7 @@
+<h1>This project is abandoned. Do not use any more.</h1>
+
+---
+
 Detekt
 ======
 
