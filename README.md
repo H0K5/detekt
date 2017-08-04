@@ -1,5 +1,7 @@
 <h1>This project is abandoned. Do not use any more.</h1>
 
+The original README is left below for posterity.
+
 ---
 
 Detekt
